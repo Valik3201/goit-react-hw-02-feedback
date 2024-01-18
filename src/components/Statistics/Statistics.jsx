@@ -7,8 +7,6 @@ const StatsWrapper = styled.div`
   font-size: 1.5rem;
 `;
 
-const StatItem = styled.div``;
-
 export const Statistics = ({
   good,
   neutral,
@@ -17,10 +15,10 @@ export const Statistics = ({
   positivePercentage,
 }) => (
   <StatsWrapper>
-    <StatItem>Bad: {bad}</StatItem>
-    <StatItem>Neutral: {neutral}</StatItem>
-    <StatItem>Good: {good}</StatItem>
-    <StatItem>Total: {total}</StatItem>
-    <StatItem>Positive Feedback Percentage: {positivePercentage}%</StatItem>
+    <p>Bad: {bad}</p>
+    <p>Neutral: {neutral}</p>
+    <p>Good: {good}</p>
+    <p>Total: {total}</p>
+    <p>Positive Feedback Percentage: {positivePercentage}%</p>
   </StatsWrapper>
 );
