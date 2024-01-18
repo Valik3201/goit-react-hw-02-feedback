@@ -52,7 +52,7 @@ export default class App extends Component {
           gap: 10,
           justifyContent: 'center',
           alignItems: 'center',
-          fontSize: 30,
+          fontSize: '1.5rem',
           fontWeight: 600,
           color: '#fff',
           backgroundImage: 'linear-gradient(73deg, #080614 51%, #12a282 80%)',

@@ -28,9 +28,9 @@ number of reviews and the percentage of positive feedback.
 
 ## Project Structure
 
-- **src/components/Statistics.js**: Component for displaying feedback
-  statistics.
-- **src/components/FeedbackOptions.js**: Component for feedback buttons.
-- **src/components/Section.js**: Component for rendering sections with titles.
-- **src/components/Notification.js**: Component for displaying notifications.
-- **src/App.js**: Root component containing the main logic and state.
+- **src/components/Statistics**: Component for displaying feedback statistics.
+- **src/components/FeedbackOptions**: Component for feedback buttons.
+- **src/components/Section**: Component for rendering sections with titles.
+- **src/components/Notification**: Component for displaying notifications.
+- **src/components/App.jsx**: Root component containing the main logic and
+  state.

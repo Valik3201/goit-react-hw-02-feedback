@@ -1,3 +1,14 @@
+import styled from 'styled-components';
+
+const StatsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1.5rem;
+`;
+
+const StatItem = styled.div``;
+
 export const Statistics = ({
   good,
   neutral,
@@ -5,11 +16,11 @@ export const Statistics = ({
   total,
   positivePercentage,
 }) => (
-  <div>
-    <div>Bad: {bad}</div>
-    <div>Neutral: {neutral}</div>
-    <div>Good: {good}</div>
-    <div>Total: {total}</div>
-    <div>Positive Feedback Percentage: {positivePercentage}%</div>
-  </div>
+  <StatsWrapper>
+    <StatItem>Bad: {bad}</StatItem>
+    <StatItem>Neutral: {neutral}</StatItem>
+    <StatItem>Good: {good}</StatItem>
+    <StatItem>Total: {total}</StatItem>
+    <StatItem>Positive Feedback Percentage: {positivePercentage}%</StatItem>
+  </StatsWrapper>
 );
