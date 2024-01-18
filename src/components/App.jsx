@@ -1,9 +1,14 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Section } from './Section/Section';
 import { Statistics } from './Statistics/Statistics';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Notification } from './Notification/Notification';
 
+/**
+ * @class App
+ * @description The main application component for the Expresso Feedback Widget.
+ */
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -20,17 +25,32 @@ export default class App extends Component {
       this.countPositiveFeedbackPercentage.bind(this);
   }
 
+  /**
+   * @method
+   * @description Updates the feedback count based on the selected option.
+   * @param {string} type - The type of feedback option ('good', 'neutral', or 'bad').
+   */
   handleLeaveFeedback(type) {
     this.setState(prevState => ({
       [type]: prevState[type] + 1,
     }));
   }
 
+  /**
+   * @method
+   * @description Calculates the total number of feedback received.
+   * @returns {number} The total feedback count.
+   */
   countTotalFeedback() {
     const { good, neutral, bad } = this.state;
     return good + neutral + bad;
   }
 
+  /**
+   * @method
+   * @description Calculates the percentage of positive feedback.
+   * @returns {number} The percentage of positive feedback.
+   */
   countPositiveFeedbackPercentage() {
     const total = this.countTotalFeedback();
     const positive = this.state.good;
@@ -92,3 +112,12 @@ export default class App extends Component {
     );
   }
 }
+
+// PropTypes for the App component
+App.propTypes = {
+  good: PropTypes.number,
+  neutral: PropTypes.number,
+  bad: PropTypes.number,
+  total: PropTypes.number,
+  positivePercentage: PropTypes.number,
+};
