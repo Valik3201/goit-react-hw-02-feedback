@@ -8,8 +8,8 @@ import styled from 'styled-components';
 const StatsWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  font-size: 1.5rem;
+  gap: 1rem;
+  padding-top: 1rem;
 `;
 
 /**

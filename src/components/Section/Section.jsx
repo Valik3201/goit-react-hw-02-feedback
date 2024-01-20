@@ -6,7 +6,7 @@ import styled from 'styled-components';
  * @description A styled section component with a title and content.
  */
 const Title = styled.h2`
-  font-size: 2.5rem;
+  font-size: '1rem';
   color: #fff;
 `;
 

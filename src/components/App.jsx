@@ -72,13 +72,13 @@ export default class App extends Component {
           gap: 10,
           justifyContent: 'center',
           alignItems: 'center',
-          fontSize: '1.5rem',
+          fontSize: '1rem',
           fontWeight: 600,
           color: '#fff',
           backgroundImage: 'linear-gradient(73deg, #080614 51%, #12a282 80%)',
         }}
       >
-        <h1>Expresso Feedback Widget</h1>
+        <h1 style={{ textAlign: 'center' }}>Expresso Feedback Widget</h1>
         <div
           style={{
             background: 'rgba(8, 6, 20, 0.275)',
@@ -86,6 +86,8 @@ export default class App extends Component {
             borderRadius: '1rem',
             border: '1px solid rgba(8, 6, 20, 0.125)',
             padding: '2rem',
+            width: '375px',
+            height: '300px',
           }}
         >
           <Section title="Please leave feedback">
