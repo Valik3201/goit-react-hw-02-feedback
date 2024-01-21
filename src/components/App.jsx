@@ -5,6 +5,12 @@ import { Statistics } from './Statistics/Statistics';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Notification } from './Notification/Notification';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+
 /**
  * @class App
  * @description The main application component for the Expresso Feedback Widget.
@@ -64,53 +70,33 @@ export default class App extends Component {
     const positivePercentage = this.countPositiveFeedbackPercentage();
 
     return (
-      <div
-        style={{
-          height: '100vh',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 10,
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: '1rem',
-          fontWeight: 600,
-          color: '#fff',
-          backgroundImage: 'linear-gradient(73deg, #080614 51%, #12a282 80%)',
-        }}
-      >
-        <h1 style={{ textAlign: 'center' }}>Expresso Feedback Widget</h1>
-        <div
-          style={{
-            background: 'rgba(8, 6, 20, 0.275)',
-            boxShadow: '0 0.75rem 2rem 0 rgba(18, 162, 130, 0.1)',
-            borderRadius: '1rem',
-            border: '1px solid rgba(8, 6, 20, 0.125)',
-            padding: '2rem',
-            width: '375px',
-            height: '300px',
-          }}
-        >
-          <Section title="Please leave feedback">
-            <FeedbackOptions
-              options={['bad', 'neutral', 'good']}
-              onLeaveFeedback={this.handleLeaveFeedback}
-            />
-          </Section>
-          <Section title="Statistics">
-            {total > 0 ? (
-              <Statistics
-                good={good}
-                neutral={neutral}
-                bad={bad}
-                total={total}
-                positivePercentage={positivePercentage}
+      <Container className="justify-content-center mt-5 mb-5">
+        <Row className="justify-content-center">
+          <Col xs={12} md={6}>
+            <h1 className="mb-3">Feedback Widget</h1>
+
+            <Section title="Please leave feedback">
+              <FeedbackOptions
+                options={['bad', 'neutral', 'good']}
+                onLeaveFeedback={this.handleLeaveFeedback}
               />
-            ) : (
-              <Notification message="There is no feedback" />
-            )}
-          </Section>
-        </div>
-      </div>
+            </Section>
+            <Section title="Statistics">
+              {total > 0 ? (
+                <Statistics
+                  good={good}
+                  neutral={neutral}
+                  bad={bad}
+                  total={total}
+                  positivePercentage={positivePercentage}
+                />
+              ) : (
+                <Notification message="There is no feedback" />
+              )}
+            </Section>
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }

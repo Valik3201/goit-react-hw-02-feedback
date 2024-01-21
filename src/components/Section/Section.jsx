@@ -1,14 +1,4 @@
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-/**
- * @component
- * @description A styled section component with a title and content.
- */
-const Title = styled.h2`
-  font-size: '1rem';
-  color: #fff;
-`;
 
 /**
  * @component
@@ -19,10 +9,10 @@ const Title = styled.h2`
  * @returns {JSX.Element} The rendered Section component.
  */
 export const Section = ({ title, children }) => (
-  <div>
-    <Title>{title}</Title>
+  <>
+    <h2>{title}</h2>
     {children}
-  </div>
+  </>
 );
 
 Section.propTypes = {

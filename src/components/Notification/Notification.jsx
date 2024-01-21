@@ -1,14 +1,5 @@
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-/**
- * @component
- * @description A styled notification component for displaying messages.
- */
-const NotificationWrapper = styled.p`
-  color: red;
-  font-size: 20px;
-`;
+import Alert from 'react-bootstrap/Alert';
 
 /**
  * @component
@@ -18,7 +9,9 @@ const NotificationWrapper = styled.p`
  * @returns {JSX.Element} The rendered Notification component.
  */
 export const Notification = ({ message }) => (
-  <NotificationWrapper>{message}</NotificationWrapper>
+  <Alert variant="danger" className="mt-3">
+    {message}
+  </Alert>
 );
 
 Notification.propTypes = {

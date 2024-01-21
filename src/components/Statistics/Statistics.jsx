@@ -1,16 +1,6 @@
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-/**
- * @component
- * @description A styled component to display statistics.
- */
-const StatsWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding-top: 1rem;
-`;
+import ProgressBar from 'react-bootstrap/ProgressBar';
+import Badge from 'react-bootstrap/Badge';
 
 /**
  * @component
@@ -30,13 +20,32 @@ export const Statistics = ({
   total,
   positivePercentage,
 }) => (
-  <StatsWrapper>
-    <p>Bad: {bad}</p>
-    <p>Neutral: {neutral}</p>
-    <p>Good: {good}</p>
-    <p>Total: {total}</p>
-    <p>Positive Feedback Percentage: {positivePercentage}%</p>
-  </StatsWrapper>
+  <div className="d-flex flex-column gap-2 mt-3">
+    <ProgressBar
+      variant="danger"
+      now={(bad / total) * 100}
+      label={`Bad: ${bad}`}
+    />
+    <ProgressBar
+      variant="warning"
+      now={(neutral / total) * 100}
+      label={`Neutral: ${neutral}`}
+    />
+    <ProgressBar
+      variant="success"
+      now={(good / total) * 100}
+      label={`Good: ${good}`}
+    />
+    <h4 className="fw-bold mt-3">
+      Total <Badge bg="info">{total}</Badge>
+    </h4>
+    <p className="fw-bold">Positive Feedback Percentage</p>
+    <ProgressBar
+      animated
+      now={positivePercentage}
+      label={`${positivePercentage}%`}
+    />
+  </div>
 );
 
 Statistics.propTypes = {
