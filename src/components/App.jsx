@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { Section } from './Section/Section';
 import { Statistics } from './Statistics/Statistics';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
@@ -77,7 +76,7 @@ export default class App extends Component {
 
             <Section title="Please leave feedback">
               <FeedbackOptions
-                options={['bad', 'neutral', 'good']}
+                options={Object.keys(this.state)}
                 onLeaveFeedback={this.handleLeaveFeedback}
               />
             </Section>
@@ -100,12 +99,3 @@ export default class App extends Component {
     );
   }
 }
-
-// PropTypes for the App component
-App.propTypes = {
-  good: PropTypes.number,
-  neutral: PropTypes.number,
-  bad: PropTypes.number,
-  total: PropTypes.number,
-  positivePercentage: PropTypes.number,
-};
